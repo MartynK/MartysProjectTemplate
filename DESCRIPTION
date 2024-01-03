@@ -1,14 +1,15 @@
-Package: PROJECTNAME
-Title: PROJECT_TITLE
+Package: Inflation.app
+Title: Infláció - HUF
 Version: 0.1.0
 Authors@R: 
     person("Márton", "Kiss", , "mrkmarton@gmail.com", role = c("aut", "cre"))
-Description: PROJECT_DESCRIPTION.
+Description: Ez egy 'lightweight' applikáció a forint inflációjának a szemléltetésére..
 License: MIT + file LICENSE
 Depends:
     dplyr,
     ggplot2,
     knitr,
+    shiny,
     lubridate,
     R (>= 4.0.0)
 Imports:

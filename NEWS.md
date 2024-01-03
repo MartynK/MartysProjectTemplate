@@ -1,6 +1,4 @@
-# PROJECT_TITLE 0.1.0
-
-NOTE: Somewhat ironically this template is not version controlled. Apologies :(
+# Inflation_app 0.1.0
 
 ## New features
 
