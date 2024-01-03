@@ -5,8 +5,8 @@ library(dplyr)
 library(lubridate)
 library(ggplot2)
 
-load(here::here("inst","backend","calculate_daily_data.rdata"))
-
+#load(here::here("inst","backend","calculate_daily_data.rdata"))
+load("calculate_daily_data.rdata")
 
 # Define UI for application that draws a histogram
 ui <- fluidPage(
