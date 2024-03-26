@@ -13,17 +13,18 @@ knitr::opts_chunk$set(
 )
 ```
 
-# PROJECTNAME
+# HUPHAR2024_PK_presentation
 
 <!-- badges: start -->
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 [![CRAN status](https://www.r-pkg.org/badges/version/PROJECTNAME)](https://CRAN.R-project.org/package=PROJECTNAME)
 <!-- badges: end -->
 
-The goal of PROJECTNAME is to ...
-Have a home of my template for a new project.
+The goal of HUPHAR2024_PK_presentation is to investigate the vibrance of effects of different compartmental models based on public BE datasets using SAEMIX.
 
-You need to update:
+
+
+As a reminder to myself, at each version bump I nned to update:
 
  - README file (duh)  
  - devtools::build_readme() 
@@ -41,19 +42,22 @@ Notes:
 
 ## Installation
 
-You can install the development version of PROJECTNAME from [GitHub](https://github.com/) with:
+You can 'install' the development version of PROJECTNAME from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("MartynK/MartysProjectTemplate")
+devtools::install_github("MartynK/HUPHAR2024_PK_presentation")
 ```
 
-## Example
+You'd need to have R and RStudio installed on your computer for the full experience. The *.html* outputs are (usually) available in the *vignettes* and *docs* subfolders.
+
+
+## Further template-like notes
 
 This is a basic example which shows you how to solve a common problem:
 
 ```{r example}
-library(PROJECTNAME)
+library(HUPHAR2024_PK_presentation)
 ## basic example code
 ```
 

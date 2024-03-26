@@ -1,0 +1,114 @@
+Nonlinear mixed-effects model fit by the SAEM algorithm
+-----------------------------------
+----          Data             ----
+-----------------------------------
+Object of class SaemixData
+    longitudinal data for use with the SAEM algorithm
+Dataset . 
+    Structured data: COBS ~ TIME | ID 
+    Predictor: TIME (hr) 
+Dataset characteristics:
+    number of subjects:     24 
+    number of observations: 384 
+    average/min/max nb obs: 16.00  /  16  /  16 
+First 10 lines of data:
+   ID TIME    COBS mdv cens occ ytype
+1   1 0.00  0.0000   0    0   1     1
+2   1 0.05 13.7152   0    0   1     1
+3   1 0.35 62.3357   0    0   1     1
+4   1 0.50 67.9444   0    0   1     1
+5   1 0.75 66.3308   0    0   1     1
+6   1 1.00 86.3231   0    0   1     1
+7   1 2.00 34.9557   0    0   1     1
+8   1 3.00 23.6187   0    0   1     1
+9   1 4.00 12.2325   0    0   1     1
+10  1 6.00  4.4733   0    0   1     1
+-----------------------------------
+----          Model            ----
+-----------------------------------
+Nonlinear mixed-effects model
+  Model function:  One-compartment model with first-order absorption
+  Model type:  structural
+function(psi, id, xidep) {
+  dose <- 100
+  tim <- xidep[,1]
+  ka <- psi[id,1]
+  V <- psi[id,2]
+  CL <- psi[id,3]
+  k <- CL/V
+  ypred <- dose * ka/(V*(ka-k)) * (exp(-k*tim) - exp(-ka*tim))
+  return(ypred)
+}
+<bytecode: 0x00000218d33b3508>
+  Nb of parameters: 3 
+      parameter names:  ka V CL 
+      distribution:
+     Parameter Distribution Estimated
+[1,] ka        log-normal   Estimated
+[2,] V         log-normal   Estimated
+[3,] CL        log-normal   Estimated
+  Variance-covariance matrix:
+   ka V CL
+ka  1 0  0
+V   0 1  0
+CL  0 0  1
+  Error model: combined , initial values: a.1=1 b.1=1 
+    No covariate in the model.
+    Initial values
+                ka  V   CL
+Pop.CondInit 0.015 18 0.18
+-----------------------------------
+----    Key algorithm options  ----
+-----------------------------------
+    Estimation of individual parameters (MAP)
+    Estimation of standard errors and linearised log-likelihood
+    Estimation of log-likelihood by importance sampling
+    Number of iterations:  K1=600, K2=600 
+    Number of chains:  10 
+    Seed:  632545 
+    Number of MCMC iterations for IS:  5000 
+    Simulations:
+        nb of simulated datasets used for npde:  1000 
+        nb of simulated datasets used for VPC:  100 
+    Input/output
+        save the results to a file:  TRUE 
+        save the graphs to files:  TRUE 
+        directory where results should be saved:  newdir 
+----------------------------------------------------
+----                  Results                   ----
+----------------------------------------------------
+-----------------  Fixed effects  ------------------
+----------------------------------------------------
+     Parameter Estimate SE     CV(%)
+[1,] ka        0.384    0.0315 8.2  
+[2,] V         0.162    0.0114 7.0  
+[3,] CL        0.580    0.0340 5.8  
+[4,] a.1       1.466    0.0813 5.5  
+[5,] b.1       0.099    0.0075 7.6  
+----------------------------------------------------
+-----------  Variance of random effects  -----------
+----------------------------------------------------
+   Parameter Estimate SE    CV(%)
+ka omega2.ka 0.153    0.046 30   
+V  omega2.V  0.082    0.034 42   
+CL omega2.CL 0.079    0.024 30   
+----------------------------------------------------
+------  Correlation matrix of random effects  ------
+----------------------------------------------------
+          omega2.ka omega2.V omega2.CL
+omega2.ka 1         0        0        
+omega2.V  0         1        0        
+omega2.CL 0         0        1        
+----------------------------------------------------
+---------------  Statistical criteria  -------------
+----------------------------------------------------
+Likelihood computed by linearisation
+      -2LL= 1937.433 
+      AIC = 1953.433 
+      BIC = 1962.858 
+
+Likelihood computed by importance sampling
+      -2LL= 1936.978 
+      AIC = 1952.978 
+      BIC = 1962.402 
+----------------------------------------------------

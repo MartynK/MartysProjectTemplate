@@ -1,0 +1,2 @@
+,study_sid,study_name,intervention_pk,raw_pk,normed,name,route,route_label,form,form_label,application,application_label,time,time_end,time_unit,measurement_type,measurement_type_label,calculation_type,calculation_type_label,choice,choice_label,substance,substance_label,value,mean,median,min,max,sd,se,cv,unit
+0,PKDB00275,Zhang2016,4048,4047,True,Dtor,oral,oral (po),tablet,tablet,single-dose,single dose,0,,hr,dosing,dosing,,,,,torasemide,torasemide,0.01,,,,,,,,gram

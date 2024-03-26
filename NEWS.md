@@ -1,10 +1,9 @@
-# PROJECT_TITLE 0.1.0
+# HUPHAR2024_PK_presentation 0.1.0
 
-NOTE: Somewhat ironically this template is not version controlled. Apologies :(
 
 ## New features
 
- - Initial release
+ - Empty template with Referenc dataset
 
 ## Fixes
 
