@@ -1,3 +1,7 @@
+# First forray, can I run saemix after loading the datasets?
+
+try(source(here::here("inst","datasets.r")))
+
 library(saemix)
 library(dplyr)
 
@@ -45,13 +49,16 @@ saemix.options <- list(seed = 632545, save = TRUE,
                        maxim.maxiter = 200,
                        nbiter.saemix = c(600, 600))
 
-saemix.fit.teoph2 <- saemix(saemix.model, saemix.data.teoph2, saemix.options)
 
-saemix.fit.glucose <- saemix(saemix.model, saemix.data.glucose, saemix.options)
+## Model fitting, ~90secs per model, commented out the two alternates
+
+#saemix.fit.teoph2 <- saemix(saemix.model, saemix.data.teoph2, saemix.options)
+#saemix.fit.glucose <- saemix(saemix.model, saemix.data.glucose, saemix.options)
 
 saemix.fit.dapto <- saemix(saemix.model, saemix.data.dapto, saemix.options)
 
 
+# Choosing a mod to plot out for further investigation
 ACT_MOD <- "dapto"
 
 get(paste0("saemix.fit.",ACT_MOD)) %>% plot
