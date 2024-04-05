@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-# Inflation_app 0.1.0
-=======
 # HUPHAR2024_PK_presentation 0.2.0
 
->>>>>>> devel
 
 ## New features
 

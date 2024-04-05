@@ -1,8 +1,0 @@
-,study_name,study_sid,measurement_type,group_count,group_name,max,substance,count,calculation_type,group_parent_pk,sd,unit,se,min,cv,median,group_pk,characteristica_pk,mean,choice,value
-0,Zhang2016,PKDB00275,bmi,24,all,24.0,,24,sample mean,,,kilogram / meter ** 2,,19.0,,,2245,51616,,,
-1,Zhang2016,PKDB00275,overnight fast,24,all,,,24,sample mean,,,,,,,,2245,51617,,Y,
-2,Zhang2016,PKDB00275,species,24,all,,,24,sample mean,,,,,,,,2245,51618,,homo sapiens,
-3,Zhang2016,PKDB00275,healthy,24,all,,,24,sample mean,,,,,,,,2245,51612,,Y,
-4,Zhang2016,PKDB00275,ethnicity,24,all,,,24,sample mean,,,,,,,,2245,51613,,chinese,
-5,Zhang2016,PKDB00275,sex,24,all,,,24,sample mean,,,,,,,,2245,51614,,M,
-6,Zhang2016,PKDB00275,age,24,all,40.0,,24,sample mean,,,year,,18.0,,,2245,51615,,,

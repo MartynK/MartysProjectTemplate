@@ -7,7 +7,7 @@
 #' @param directory A character string of the directory path to scan for .Rdata or .rdata files.
 #'
 #' @examples
-#' load_all_Rdata(here::here("inst","backend"))
+#' load_all_Rdata(here::here("inst","report","backend))
 #'
 #' @export
 load_all_Rdata <- function(directory) {
@@ -15,16 +15,16 @@ load_all_Rdata <- function(directory) {
   if (!dir.exists(directory)) {
     stop("Directory does not exist: ", directory)
   }
-
+  
   # List all .Rdata or .rdata files in the directory
   file_paths <- list.files(directory, pattern = "\\.Rdata$|\\.rdata$", full.names = TRUE)
-
+  
   # Check if there are any files to load
   if (length(file_paths) == 0) {
     warning("No .Rdata or .rdata files found in the directory: ", directory)
     return(invisible(NULL))
   }
-
+  
   # Load each file with error handling
   for (file_path in file_paths) {
     tryCatch({
