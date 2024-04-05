@@ -1,5 +1,8 @@
 # Data wrangling
 
+fil <- here::here("inst","extdata","rds.xls")
+
+
 descriptor <-
   here::here("inst","extdata","description.xlsx") %>%
   file.path() %>%
@@ -15,10 +18,13 @@ labs <-
   # add column names as 'names'
   `names<-`(descriptor$name_new)
 
+sheets <- readxl::excel_sheets(fil)
 
-data <- fil |>
-  readxl::read_xls() |> # or read_xlsx() as appropriate
-  mutate( across( .cols = which( descriptor$trf == "factor"),
+for (dataset in sheets) {
+
+  datachunk <- fil |>
+    readxl::read_xls(sheet = dataset) |> # or read_xlsx() as appropriate
+    mutate( across( .cols = which( descriptor$trf == "factor"),
                     .fns = as.factor
     ),
     across( .cols = which( descriptor$trf == "numeric"),
@@ -27,8 +33,20 @@ data <- fil |>
     across( .cols = which( descriptor$trf == "date"),
             .fns = lubridate::as_datetime
     )) %>%
-  `colnames<-`( descriptor$name_new) %>%
-  labelled::`var_label<-`(   labs  ) 
+    .[,1:5] %>% # Some datasets have a "logPK" column which is superfluous
+    `colnames<-`( descriptor$name_new) %>%
+    labelled::`var_label<-`(   labs  ) %>%
+    mutate(dataset = dataset)
+
+  # binding the actual dataset to a 'master list'
+  if ( dataset == sheets[1]) {
+    data <- datachunk
+  } else {
+    data <- bind_rows(data, datachunk)
+  }
+
+}
+
 
 
 
