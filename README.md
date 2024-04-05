@@ -1,6 +1,17 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
+# Before we begin
+
+- Do **not** use ’\_’ in the project’s name
+- Do **not** copy the .git folder to the project folder!
+- Do initialize your repo on GitHub
+- Do clone your repo onto a folder on your local machine
+- Do open a new ‘devel’ branch
+- Do copy the template stuff into the new folder now on said branch
+- Do update the ‘PROJECTNAME’ parts
+- Do some actual work (optional)
+
 # PROJECTNAME
 
 <!-- badges: start -->
@@ -14,18 +25,22 @@ status](https://www.r-pkg.org/badges/version/PROJECTNAME)](https://CRAN.R-projec
 The goal of PROJECTNAME is to … Have a home of my template for a new
 project.
 
-You need to update:
+As a reminder for myself, at each version bump I need to update:
 
-- README file (duh)  
+- README.Rmd file (duh)  
+- devtools::build_readme()
 - NEWS file (project name)  
 - DESCRIPTION (depends etc.)  
 - devtools::document() your project after defining new functions under
   /R  
+- devtools::build_site()
 - then devtools::install()  
 - only then devtools::check()
 
-Notes: - usethis::create_project() is a great resource -
-usethis::create_tidy_package() is also great
+Notes:
+
+- usethis::create_project() is a great resource  
+- usethis::create_tidy_package() is also great
 
 ## Installation
 
@@ -37,31 +52,16 @@ You can install the development version of PROJECTNAME from
 devtools::install_github("MartynK/MartysProjectTemplate")
 ```
 
+You’d need to have R and RStudio installed on your computer for the full
+experience. The *.html* outputs are (usually) available in the
+*vignettes* and *docs* subfolders.
+
 ## Example
 
 This is a basic example which shows you how to solve a common problem:
 
 ``` r
-library(PROJECTNAME)
-#> Loading required package: dplyr
-#> Warning: package 'dplyr' was built under R version 4.3.2
-#> 
-#> Attaching package: 'dplyr'
-#> The following objects are masked from 'package:stats':
-#> 
-#>     filter, lag
-#> The following objects are masked from 'package:base':
-#> 
-#>     intersect, setdiff, setequal, union
-#> Loading required package: ggplot2
-#> Loading required package: knitr
-#> Warning: package 'knitr' was built under R version 4.3.2
-#> Loading required package: lubridate
-#> 
-#> Attaching package: 'lubridate'
-#> The following objects are masked from 'package:base':
-#> 
-#>     date, intersect, setdiff, union
+#library(PROJECTNAME)
 ## basic example code
 ```
 

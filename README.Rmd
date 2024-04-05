@@ -13,6 +13,17 @@ knitr::opts_chunk$set(
 )
 ```
 
+# Before we begin
+ 
+ - Do **not** use '_' in the project's name
+ - Do **not** copy the .git folder to the project folder!
+ - Do initialize your repo on GitHub
+ - Do clone your repo onto a folder on your local machine
+ - Do open a new 'devel' branch
+ - Do copy the template stuff into the new folder now on said branch
+ - Do update the 'PROJECTNAME' parts
+ - Do some actual work (optional)
+
 # PROJECTNAME
 
 <!-- badges: start -->
@@ -23,9 +34,9 @@ knitr::opts_chunk$set(
 The goal of PROJECTNAME is to ...
 Have a home of my template for a new project.
 
-You need to update:
+As a reminder for myself, at each  version bump I need to update:
 
- - README file (duh)  
+ - README.Rmd file (duh)  
  - devtools::build_readme() 
  - NEWS file (project name)  
  - DESCRIPTION (depends etc.)  
@@ -48,12 +59,14 @@ You can install the development version of PROJECTNAME from [GitHub](https://git
 devtools::install_github("MartynK/MartysProjectTemplate")
 ```
 
+You'd need to have R and RStudio installed on your computer for the full experience. The *.html* outputs are (usually) available in the *vignettes* and *docs* subfolders.
+
 ## Example
 
 This is a basic example which shows you how to solve a common problem:
 
 ```{r example}
-library(PROJECTNAME)
+#library(PROJECTNAME)
 ## basic example code
 ```
 

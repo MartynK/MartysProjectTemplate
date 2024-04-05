@@ -20,22 +20,22 @@ execute:
 
 fil <- here::here("inst","extdata","Iris.xls")
 
-source( here::here( "inst", "example_quarto", "functions", "load_stuff.r"))
-source( here::here( "inst", "example_quarto", "functions", "wrangling.r"))
+source( here::here( "inst", "report", "functions", "load_stuff.r"))
+source( here::here( "inst", "report", "functions", "wrangling.r"))
 
 # source_all_files(here::here("inst","example_quarto","backend")) # Run slow stuff; 
 ##recommend running separately
 
-load_all_Rdata(directory=here::here("inst","example_quarto","backend")) # Load slow suff's output
+load_all_Rdata(directory=here::here("inst","report","backend")) # Load slow suff's output
 
 ```
 
-```{r, child = here::here("inst", "example_quarto", "child1_preamble.qmd")}
+```{r, child = here::here("inst", "report", "child1_preamble.qmd")}
 ```
 
 \newpage
 
-```{r, child = here::here("inst", "example_quarto", "child2.qmd")}
+```{r, child = here::here("inst", "report", "child2.qmd")}
 ```
 
 \newpage
@@ -58,5 +58,5 @@ sessionInfo() %>% report::report() %>% cat()
 
 ```{r last_chunk, results='asis'}
 Sys.time() %>% as.character %>% cat
-save.image(file = here::here("inst","example_quarto","end_state.rdata"))
+save.image(file = here::here("inst","report","end_state.rdata"))
 ```
