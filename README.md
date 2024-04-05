@@ -1,50 +1,18 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-<<<<<<< HEAD
-# Infláció - HUF
-=======
-# Final notes
+# Before we begin
 
-I consider this project a dead end.
+- Do **not** use ’\_’ in the project’s name
+- Do **not** copy the .git folder to the project folder!
+- Do initialize your repo on GitHub
+- Do clone your repo onto a folder on your local machine
+- Do open a new ‘devel’ branch
+- Do copy the template stuff into the new folder now on said branch
+- Do update the ‘PROJECTNAME’ parts
+- Do some actual work (optional)
 
-## Why?
-
-I tried to do SAEMIX models with specific diff. models, several of them
-on several datasets but the runtime was prohibitive despite best
-efforts.
-
-## What was achieved?
-
-I scourged other packages for public, actual PK data and found ~10
-datasets. They are enumerated in *inst/datasets.r*
-
-I have implemented a one compartmental model both by calculating it
-stepwise and by a *desolve* routine.
-
-## What wasn’t achieved?
-
-Didn’t wait for the SAEMIX to converge using an 84 obs. long dataset and
-a one compartmental model. It was 2+hours wwhich was well above my
-tolerance. I could have parallelized the problem but that would have
-only meant a 10x increase in runtime, which was not enough for my
-purposes. I imagine for more complicated models, and for datasets
-including 1000+ observations it wouldn’t have sufficed.
-
-## Parting thoughts, nagging feelings
-
-I have tried to search for closed solutions for complex PK models, like
-for specific two or three compartment models and found nothing. The
-example for SAEMIX is for a 1 compartment model, (sometimes erroneously
-referred to as a 2-compartment model) but every example and reference I
-found used the exact same model which was annoying.
-
-Keeping the repo public for transparency, and as a prime example of how
-to take on more than you can chew which would result in a lot of
-non-successses.
-
-# HUPHAR2024.PK.presentation
->>>>>>> devel
+# PROJECTNAME
 
 <!-- badges: start -->
 
@@ -54,27 +22,12 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 status](https://www.r-pkg.org/badges/version/PROJECTNAME)](https://CRAN.R-project.org/package=PROJECTNAME)
 <!-- badges: end -->
 
-<<<<<<< HEAD
-A project célja létrehozn egy közérthető adatsort és ehhez tartozó appot
-a KSH CPI adatsora alapján (amit a szerző véleménye szerint elég nehéz
-megtalálni).
+The goal of PROJECTNAME is to … Have a home of my template for a new
+project.
 
-## Összefoglalás
+As a reminder for myself, at each version bump I need to update:
 
-A KSH havi adatsorát átdolgoztam, napi bontásra. Az adatsor excelben az
-*inst/backend/calculate_daily_data.xlsx* úton elérhető.
-
-``` r
-library(ggplot2)
-load( here::here("inst","backend","calculate_daily_data.rdata"))
-=======
-The goal of HUPHAR2024_PK_presentation is to investigate the vibrance of
-effects of different compartmental models based on public BE datasets
-using SAEMIX.
-
-As a reminder to myself, at each version bump I nned to update:
-
-- README file (duh)  
+- README.Rmd file (duh)  
 - devtools::build_readme()
 - NEWS file (project name)  
 - DESCRIPTION (depends etc.)  
@@ -88,47 +41,27 @@ Notes:
 
 - usethis::create_project() is a great resource  
 - usethis::create_tidy_package() is also great
->>>>>>> devel
 
-dat |>
-  ggplot( aes( x = time, y = cpi)) +
-  theme_bw() +
-  theme( legend.position = "none") +
-  geom_line()  +
-  scale_x_date(date_breaks = "2 years", date_labels = "%Y") +
-  labs( x = "Dátum",
-        y = "CPI (1990 = 100)")
-```
+## Installation
 
-<<<<<<< HEAD
-<img src="man/figures/README-unnamed-chunk-2-1.png" width="100%" />
-
-## Lokális verzió futtatása
-
-Az appot az ingyenes Rstudio telepítése után lokáisan is futtathatjuk a
-[GitHub](https://github.com/) segítségével.
-=======
-You can ‘install’ the development version of PROJECTNAME from
+You can install the development version of PROJECTNAME from
 [GitHub](https://github.com/) with:
->>>>>>> devel
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("MartynK/HUPHAR2024_PK_presentation")
+devtools::install_github("MartynK/MartysProjectTemplate")
 ```
-<<<<<<< HEAD
-=======
 
 You’d need to have R and RStudio installed on your computer for the full
 experience. The *.html* outputs are (usually) available in the
 *vignettes* and *docs* subfolders.
 
-## Further template-like notes
+## Example
 
 This is a basic example which shows you how to solve a common problem:
 
 ``` r
-#library(HUPHAR2024.PK.presentation)
+#library(PROJECTNAME)
 ## basic example code
 ```
 
@@ -155,4 +88,3 @@ You can also embed plots, for example:
 
 In that case, don’t forget to commit and push the resulting figure
 files, so they display on GitHub and CRAN.
->>>>>>> devel
