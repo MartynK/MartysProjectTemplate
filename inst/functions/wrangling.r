@@ -1,6 +1,6 @@
 # Data wrangling
 
-fil <- here::here("inst","extdata","rds.xls")
+fil <- here::here("inst","extdata","iris.xls")
 
 
 descriptor <-
@@ -20,6 +20,9 @@ labs <-
 
 sheets <- readxl::excel_sheets(fil)
 
+#!!!!!!!!!
+sheets <- sheets[1]
+
 for (dataset in sheets) {
 
   datachunk <- fil |>
@@ -33,7 +36,6 @@ for (dataset in sheets) {
     across( .cols = which( descriptor$trf == "date"),
             .fns = lubridate::as_datetime
     )) %>%
-    .[,1:5] %>% # Some datasets have a "logPK" column which is superfluous
     `colnames<-`( descriptor$name_new) %>%
     labelled::`var_label<-`(   labs  ) %>%
     mutate(dataset = dataset)
