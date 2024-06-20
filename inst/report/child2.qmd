@@ -38,7 +38,11 @@ Having a custom ref. docx file, I played around with the formatting and cooked u
 
 tab %>%
     gtsummary::as_kable_extra(table.attr = 'data-quarto-disable-processing="true"',
+<<<<<<< Updated upstream
           caption = "Example table") 
+=======
+          caption = "Example table")
+>>>>>>> Stashed changes
 
 
 ```
