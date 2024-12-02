@@ -30,14 +30,26 @@ knitr::opts_chunk$set(
   #,fig.path = fig_directory  # Ábra kimenet helye
 )
 
-
-options(scipen = 1) # Require 5 instead of 4 for scientific notation (eg. for p-values)
-options(digits = 3) # default no. of digits (!)
+# Dont screw with these, handles default print function also :(
+##options(scipen = 1) # Require 5 instead of 4 for scientific notation (eg. for p-values)
+##options(digits = 3) # default no. of digits (!)
 options(encoding = "UTF-8")
 
-# Setting up gtsummary themes
-theme_gtsummary_journal(journal = "nejm")
-theme_gtsummary_compact()
+# Setting up gtsummary themes if gtsummary is *loaded*
+if ("gtsummary" %in% loadedNamespaces()) {
+
+  # Apply the NEJM journal theme
+  gtsummary::theme_gtsummary_journal(journal = "nejm")
+
+  # Apply the compact theme for a cleaner table appearance
+  gtsummary::theme_gtsummary_compact()
+
+} else {
+
+  # Optionally, you can print a message or handle the absence of gtsummary
+  message("gtsummary package is not loaded. Themes not applied.")
+
+}
 
 source_all_files <- function(directory) {
   file_paths <- list.files(directory, pattern = "\\.[rR]$", full.names = TRUE)

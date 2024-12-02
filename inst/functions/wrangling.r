@@ -1,6 +1,6 @@
 # Data wrangling
 
-fil <- here::here("inst","extdata","iris.xls")
+fil <- here::here("inst","extdata","Iris.xls")
 
 
 descriptor <-
@@ -18,15 +18,14 @@ labs <-
   # add column names as 'names'
   `names<-`(descriptor$name_new)
 
-sheets <- readxl::excel_sheets(fil)
-
-#!!!!!!!!!
-sheets <- sheets[1]
+sheets <- readxl::excel_sheets(fil)[1]
 
 for (dataset in sheets) {
 
   datachunk <- fil |>
-    readxl::read_xls(sheet = dataset) |> # or read_xlsx() as appropriate
+    readxl::read_xls(sheet = dataset) |> # or read_xls() as appropriate
+    # handle duplicate colnames
+    janitor::clean_names() |>
     mutate( across( .cols = which( descriptor$trf == "factor"),
                     .fns = as.factor
     ),
@@ -37,6 +36,8 @@ for (dataset in sheets) {
             .fns = lubridate::as_datetime
     )) %>%
     `colnames<-`( descriptor$name_new) %>%
+    # select only columnswhose name isnt NA due to duplicates or whatnot
+    select( descriptor$name_new[!is.na(descriptor$name_new)])%>%
     labelled::`var_label<-`(   labs  ) %>%
     mutate(dataset = dataset)
 
@@ -49,7 +50,11 @@ for (dataset in sheets) {
 
 }
 
-
+# deselect the "not_relevant" columns
+try( {
+  data <- data %>%
+    select( -not_relevant)
+}, silent = TRUE)
 
 
 

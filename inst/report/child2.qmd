@@ -2,7 +2,6 @@
 title: "child2"
 format: docx
 editor: visual
-prefer-html: true
 ---
 
 # Examples for quick reference
@@ -31,17 +30,24 @@ tab %>%
 
 Having a custom ref. docx file, I played around with the formatting and cooked up something passable. Its not modifiable however.
 
-IT IS BROKEN!!!!
-
  \
 
 ```{r}
 #| df-print: kable
 #| tbl_colwidths: auto
 
-# tab %>%
-#     gtsummary::as_kable_extra(table.attr = 'data-quarto-disable-processing="true"',
-#           caption = "Example table") 
+data(cars)
+
+
+
+tab <- cars  %>%
+    huxtable::as_hux() %>%
+    huxtable::theme_compact() 
+
+huxtable::font_size(tab) <- 6
+
+(tab)
+
 
 
 ```
