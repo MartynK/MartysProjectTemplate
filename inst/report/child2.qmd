@@ -36,13 +36,18 @@ Having a custom ref. docx file, I played around with the formatting and cooked u
 #| df-print: kable
 #| tbl_colwidths: auto
 
-tab %>%
-    gtsummary::as_kable_extra(table.attr = 'data-quarto-disable-processing="true"',
-<<<<<<< Updated upstream
-          caption = "Example table") 
-=======
-          caption = "Example table")
->>>>>>> Stashed changes
+data(cars)
+
+
+
+tab <- cars  %>%
+    huxtable::as_hux() %>%
+    huxtable::theme_compact() 
+
+huxtable::font_size(tab) <- 6
+
+(tab)
+
 
 
 ```

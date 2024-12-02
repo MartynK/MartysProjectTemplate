@@ -1,6 +1,6 @@
 # Data wrangling
 
-fil <- here::here("inst","extdata","rds.xls")
+fil <- here::here("inst","extdata","Iris.xls")
 
 
 descriptor <-
@@ -18,12 +18,12 @@ labs <-
   # add column names as 'names'
   `names<-`(descriptor$name_new)
 
-sheets <- readxl::excel_sheets(fil)
+sheets <- readxl::excel_sheets(fil)[1]
 
 for (dataset in sheets) {
 
   datachunk <- fil |>
-    readxl::read_xlsx(sheet = dataset) |> # or read_xls() as appropriate
+    readxl::read_xls(sheet = dataset) |> # or read_xls() as appropriate
     # handle duplicate colnames
     janitor::clean_names() |>
     mutate( across( .cols = which( descriptor$trf == "factor"),

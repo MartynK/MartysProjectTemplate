@@ -30,9 +30,9 @@ knitr::opts_chunk$set(
   #,fig.path = fig_directory  # Ábra kimenet helye
 )
 
-
-options(scipen = 1) # Require 5 instead of 4 for scientific notation (eg. for p-values)
-options(digits = 3) # default no. of digits (!)
+# Dont screw with these, handles default print function also :(
+##options(scipen = 1) # Require 5 instead of 4 for scientific notation (eg. for p-values)
+##options(digits = 3) # default no. of digits (!)
 options(encoding = "UTF-8")
 
 # Setting up gtsummary themes if gtsummary is *loaded*

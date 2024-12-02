@@ -20,8 +20,8 @@ execute:
 
 fil <- here::here("inst","extdata","Iris.xls")
 
-source( here::here( "inst", "report", "functions", "load_stuff.r"))
-source( here::here( "inst", "report", "functions", "wrangling.r"))
+source( here::here( "inst", "functions", "load_stuff.r"))
+source( here::here( "inst", "functions", "wrangling.r"))
 
 # source_all_files(here::here("inst","example_quarto","backend")) # Run slow stuff; 
 ##recommend running separately
